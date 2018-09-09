@@ -4,7 +4,6 @@ public class VirtualPet {
 	private String name;
 	private int hungerLevel;
 	private int sleepinessLevel;
-	private int wasteLevel;
 	private int boredomLevel;
 	
 	public int getHungerLevel() {
@@ -15,9 +14,7 @@ public class VirtualPet {
 		return this.sleepinessLevel;
 	}
 	
-	public int getWasteLevel() {
-		return this.wasteLevel;
-	}
+
 	
 	public int getBoredomLevel() {
 		return this.boredomLevel;
@@ -35,13 +32,13 @@ public class VirtualPet {
 		this.name = name;
 		this.hungerLevel = hungerLevel;
 		this.sleepinessLevel = sleepinessLevel;
-		this.wasteLevel = 0;
+		
 		this.boredomLevel = 6;
 	}
 
 	public void feed() {
 	   this.hungerLevel = this.hungerLevel - 5;
-	   this.wasteLevel = this.wasteLevel + 2;
+	
 	}
 
 	public void playWith() {
@@ -50,14 +47,24 @@ public class VirtualPet {
 	
 	public void putInPasture() {
 		this.boredomLevel = this.boredomLevel - 3;
-		this.wasteLevel = this.wasteLevel - 3;
+	
+	}
+	
+	public void putInBarn() {
+		this.boredomLevel = this.boredomLevel + 2;
+
 	}
 
-	public void tick() {
+	public int tick() {
 		this.hungerLevel++;
-		this.wasteLevel++;
+
 		this.boredomLevel++;
 		this.sleepinessLevel++;
+		if (this.sleepinessLevel > 8) {
+			this.sleep();
+			return 1;
+		}
+		return 0;
 	}
 	
 	public void sleep() {

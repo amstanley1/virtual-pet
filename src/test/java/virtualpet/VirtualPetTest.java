@@ -35,18 +35,14 @@ public class VirtualPetTest {
 		assertTrue(sleepinessLevel == 7);
 	}
 	
-	@Test
-	public void shouldBeAbleToGetWasteLevel() {
-		int wasteLevel = pet.getWasteLevel();
-		assertTrue(wasteLevel == 0);
-	}
+
 	
 	@Test
 	public void shouldBeAbleToFeedPet() {
-		int originalWasteLevel = pet.getWasteLevel();
+
 		int originalHungerLevel = pet.getHungerLevel();
 		pet.feed();
-		assertTrue((originalWasteLevel + 2) == (pet.getWasteLevel()));
+	
 		assertTrue((originalHungerLevel - 5) == (pet.getHungerLevel()));
 	}
 	
@@ -67,21 +63,21 @@ public class VirtualPetTest {
 	@Test
 	public void shouldBeAbleToPutIntPasture() {
 		int originalBoredomLevel = pet.getBoredomLevel();
-		int originalWasteLevel = pet.getWasteLevel();
+	
 		pet.putInPasture();
 		assertTrue(originalBoredomLevel - 3 == pet.getBoredomLevel());
-		assertTrue(originalWasteLevel - 3 == pet.getWasteLevel());
+		
 	}
 	
 	@Test
 	public void tickMethodShouldIncrementsAndDecrementProperties() {
 		int originalBoredomLevel = pet.getBoredomLevel();
-		int originalWasteLevel = pet.getWasteLevel();
+		
 		int originalHungerLevel = pet.getHungerLevel();
 		int originalSleepinessLevel = pet.getSleepinessLevel();
 		pet.tick();
 		assertTrue(originalBoredomLevel + 1 == pet.getBoredomLevel());
-		assertTrue(originalWasteLevel + 1 == pet.getWasteLevel());
+	
 		assertTrue(originalHungerLevel + 1 == pet.getHungerLevel());
 		assertTrue(originalSleepinessLevel + 1 == pet.getSleepinessLevel());
 	}
