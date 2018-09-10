@@ -61,10 +61,10 @@ public class VirtualPetTest {
 	
 
 	@Test
-	public void shouldBeAbleToPutIntPasture() {
+	public void shouldBeAbleToMove() {
 		int originalBoredomLevel = pet.getBoredomLevel();
 	
-		pet.putInPasture();
+		pet.move();
 		assertTrue(originalBoredomLevel - 3 == pet.getBoredomLevel());
 		
 	}
