@@ -8,9 +8,9 @@ public class VirtualPet {
 	private int hungerLevel;
 	private int sleepinessLevel;
 	private int boredomLevel;
-	public boolean isAsleep;
-	public boolean isInPasture;
-	public boolean hasRunAway;
+	private boolean isAsleep;
+	private boolean isInPasture;
+	private boolean hasRunAway;
 
 	// Getters
 	public boolean getIsAsleep() {
@@ -88,12 +88,16 @@ public class VirtualPet {
 		} else {
 			this.boredomLevel = this.boredomLevel - 3;
 		}
+		if (this.sleepinessLevel > 8) {
+			this.sleepinessLevel = 10;
+		} else {
+			this.sleepinessLevel = this.sleepinessLevel + 2;
+		}
 	}
 
 	// move pet to pasture if in barn, or to barn if in pasture by toggling the
 	// boolean isInPasture property
 	public void move() {
-
 		if (this.isInPasture) {
 			this.isInPasture = false;
 			if (this.boredomLevel > 8) {

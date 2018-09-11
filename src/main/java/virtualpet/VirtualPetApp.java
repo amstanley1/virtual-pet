@@ -19,6 +19,7 @@ public class VirtualPetApp {
 			if (yourHorse.getIsAsleep()) {
 				System.out.println(yourHorse.getName() + " is asleep. Press 1 to continue.");
 				userSelection = input.nextInt();
+				input.nextLine();
 				if (userSelection == 1) {
 					yourHorse.wake();
 					System.out.println(yourHorse.getName() + " woke up!");
@@ -76,7 +77,7 @@ public class VirtualPetApp {
 				input.nextLine();
 
 			} else if (userSelection == 2) {
-				System.out.println("You played with " + yourHorse.getName() + ". " + yourHorse.getName() + " is less bored now." );
+				System.out.println("You played with " + yourHorse.getName() + ". " + yourHorse.getName() + " is less bored now, but more tired." );
 				yourHorse.playWith();
 				System.out.println("Press enter to continue");
 				input.nextLine();
@@ -99,7 +100,7 @@ public class VirtualPetApp {
 		
 		//check if horse has run away or user has quit the game
 		if (yourHorse.getHasRunAway()) {
-			System.out.println(yourHorse.getName() + " ran away. You should have taken better care of them.");
+			System.out.println(yourHorse.getName() + " ran away. You should have taken better care of your horse.");
 		} else {
 			System.out.println("You have quit the game. Goodbye.");
 		}
