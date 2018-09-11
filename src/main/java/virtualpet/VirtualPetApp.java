@@ -61,7 +61,7 @@ public class VirtualPetApp {
 				System.out.println("1. Apples");
 				System.out.println("2. Carrots");
 				System.out.println("3. Hay");
-				System.out.println("What would you like to feed " + yourHorse.getName() + "?");
+				System.out.println("What number would you like to select?");
 				int userSelectedFood = input.nextInt();
 				input.nextLine();
 				yourHorse.feed(userSelectedFood);
