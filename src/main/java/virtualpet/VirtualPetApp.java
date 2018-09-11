@@ -15,6 +15,7 @@ public class VirtualPetApp {
 		System.out.println("Your horse is named " + yourHorse.getName());
 		int userSelection = 0;
 		while (userSelection != 5 && !yourHorse.getHasRunAway()) {
+			//Check if horse is asleep
 			if (yourHorse.getIsAsleep()) {
 				System.out.println(yourHorse.getName() + " is asleep. Press 1 to continue.");
 				userSelection = input.nextInt();
@@ -28,12 +29,16 @@ public class VirtualPetApp {
 					continue;
 				}
 			}
+			
+			//Print horse's stats
 			System.out.println();
 			System.out.println("Stats for " + yourHorse.getName());
 			System.out.println("Hunger: " + yourHorse.getHungerLevel());
 			System.out.println("Sleepiness: " + yourHorse.getSleepinessLevel());
 			System.out.println("Boredom: " + yourHorse.getBoredomLevel());
 			System.out.println();
+			
+			//List options and ask user to select one
 			System.out.println("1. Feed " + yourHorse.getName());
 			System.out.println("2. Play with  " + yourHorse.getName());
 			if (yourHorse.getIsInPasture()) {
@@ -49,6 +54,8 @@ public class VirtualPetApp {
 			System.out.println("What number do you want to select?");
 			userSelection = input.nextInt();
 			input.nextLine();
+			
+			//Take action depending on user selected option
 			if (userSelection == 1) {
 				System.out.println("1. Apples");
 				System.out.println("2. Carrots");
@@ -84,9 +91,13 @@ public class VirtualPetApp {
 				System.out.println("Press enter to continue");
 				input.nextLine();
 			}
+			
+			//call tick method to pass time in the game
 			yourHorse.tick();
 
 		}
+		
+		//check if horse has run away or user has quit the game
 		if (yourHorse.getHasRunAway()) {
 			System.out.println(yourHorse.getName() + " ran away. You should have taken better care of them.");
 		} else {

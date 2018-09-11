@@ -37,7 +37,6 @@ public class VirtualPetTest {
 
 		int originalHungerLevel = pet.getHungerLevel();
 		pet.feed(1);
-
 		assertTrue((originalHungerLevel - 5) == (pet.getHungerLevel()));
 	}
 
@@ -55,16 +54,14 @@ public class VirtualPetTest {
 	}
 
 	@Test
-	public void shouldBeAbleToMove() {
+	public void shouldBeAbleToMovePet() {
 		int originalBoredomLevel = pet.getBoredomLevel();
-
 		pet.move();
 		assertTrue(originalBoredomLevel - 3 == pet.getBoredomLevel());
-
 	}
 
 	@Test
-	public void tickMethodShouldIncrementsAndDecrementProperties() {
+	public void tickMethodShouldIncrementAndDecrementProperties() {
 		int originalBoredomLevel = pet.getBoredomLevel();
 
 		int originalHungerLevel = pet.getHungerLevel();
@@ -81,4 +78,6 @@ public class VirtualPetTest {
 		String name = pet.getName();
 		assertTrue(name.equals("Horace"));
 	}
+	
+	
 }

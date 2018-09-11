@@ -81,7 +81,7 @@ public class VirtualPet {
 		}
 	}
 
-	// Play with Pet, lowers boredom level
+	// Play with pet, lowers boredom level
 	public void playWith() {
 		if (this.boredomLevel < 3) {
 			this.boredomLevel = 0;
@@ -91,8 +91,7 @@ public class VirtualPet {
 	}
 
 	// move pet to pasture if in barn, or to barn if in pasture by toggling the
-	// boolean
-	// isInPasture property
+	// boolean isInPasture property
 	public void move() {
 
 		if (this.isInPasture) {
@@ -112,7 +111,8 @@ public class VirtualPet {
 		}
 	}
 
-	// makes time pass, raises pet's needs
+	// makes time pass, raises pet's needs, if pet sleepiness level is above 8 it will
+	//go to sleep, if it's hunger level is above 8, it will run away.
 	public void tick() {
 		if (this.hungerLevel > 8) {
 			this.hasRunAway = true;
