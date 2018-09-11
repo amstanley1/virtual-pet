@@ -65,7 +65,7 @@ public class VirtualPetApp {
 				int userSelectedFood = input.nextInt();
 				input.nextLine();
 				yourHorse.feed(userSelectedFood);
-				System.out.println("You fed " + yourHorse.getName());
+				System.out.println("You fed " + yourHorse.getName() + ".");
 				if (userSelectedFood == 1) {
 					System.out.println(yourHorse.getName() + " ate all the apples.");
 				} else if (userSelectedFood == 2) {
